@@ -48,7 +48,6 @@ fun homepageHandler(request: Request): Response {
 
 //}
 
-
 fun route(request: Request): Response {
   val path =
     when {
