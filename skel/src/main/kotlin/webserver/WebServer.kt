@@ -2,6 +2,7 @@ package webserver
 
 // write your web framework code here:
 //http://www.google.com/search?q=kotlin&safe=active
+
 fun scheme(url: String): String = url.substringBefore("://")
 
 fun host(url: String): String = url.substringAfter("://").substringBefore("/")
@@ -16,8 +17,7 @@ fun queryParams(url: String): List<Pair<String, String>> =
   when {
     url.substringAfter(host(url)) == "/" -> emptyList()
     else                                 ->
-      url.substringAfter("?").split("&")
-        .map{x -> Pair(x.substringBefore("="), x.substringAfter("="))}
+      url.substringAfter("?").split("&").map{x -> Pair(x.substringBefore("="), x.substringAfter("="))}
   }
 
 
