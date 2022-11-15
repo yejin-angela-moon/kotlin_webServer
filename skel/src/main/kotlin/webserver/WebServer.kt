@@ -13,6 +13,7 @@ fun path(url: String): String =
     else                    -> url.substringAfter(host(url))
   }
 
+
 fun queryParams(url: String): List<Pair<String, String>> =
   when {
     url.substringAfter(host(url)) == "/" -> emptyList()

@@ -44,10 +44,6 @@ fun homepageHandler(request: Request): Response {
   return Response(Status.NOT_FOUND, "")
 }
 
-//fun programmingBooksPageHandler(request: Request): Response {
-
-//}
-
 fun route(request: Request): Response {
   val path =
     when {
@@ -65,9 +61,18 @@ fun route(request: Request): Response {
   return Response(Status.NOT_FOUND, "")
 }
 
-//else if (path == "/browse/books/programming") {
-//return programmingBooksPageHandler(request)
+//typealias HttpHandler = (Request) -> Response
+//val routeConfig = listOf("say-hello" to ::helloHandler, "/" to ::homepageHandler, "/computing" to ::homepageHandler)
+//fun configureRoutes() { //higher-order functions and lambda notation
+//  val app: HttpHandler = configureRoutes(...)
+//  val request = Request(...)
+//  val response = app(request)
 //}
+
+
+
+
+
 
 
 //if (request.url.contains("?")) {
