@@ -20,6 +20,7 @@ fun helloHandler(request: Request): Response {
           request.url.contains("style=") -> request.url.substringAfter("name=").substringBefore("&")
           else -> request.url.substringAfter("name=")
         }
+
       else -> "World"
     }
   val body = "Hello, $name!"
@@ -33,13 +34,16 @@ fun homepageHandler(request: Request): Response {
   val pages = mapOf("/" to "Imperial", "/computing" to "DoC")
   val host = request.url.substringAfter("://").substringBefore("/")
   val path = when {
-    request.url.contains("?") -> request.url.substringAfter(request.url.substringAfter("://")
-      .substringBefore("/")).substringBefore("?")
+    request.url.contains("?") -> request.url.substringAfter(
+      request.url.substringAfter("://")
+        .substringBefore("/")
+    ).substringBefore("?")
+
     else -> request.url.substringAfter(request.url.substringAfter("://").substringBefore("/"))
   }
   val value = pages.getValue(path)
   if (pages.containsKey(path)) {
-    return Response(Status.OK,"This is $value.")
+    return Response(Status.OK, "This is $value.")
   }
   return Response(Status.NOT_FOUND, "")
 }
@@ -47,8 +51,11 @@ fun homepageHandler(request: Request): Response {
 fun route(request: Request): Response {
   val path =
     when {
-      request.url.contains("?") -> request.url.substringAfter(request.url.substringAfter("://")
-        .substringBefore("/")).substringBefore("?")
+      request.url.contains("?") -> request.url.substringAfter(
+        request.url.substringAfter("://")
+          .substringBefore("/")
+      ).substringBefore("?")
+
       else -> request.url.substringAfter(request.url.substringAfter("://").substringBefore("/"))
     }
   if (path == "/" || path == "/computing") {
@@ -68,11 +75,6 @@ fun route(request: Request): Response {
 //  val request = Request(...)
 //  val response = app(request)
 //}
-
-
-
-
-
 
 
 //if (request.url.contains("?")) {
