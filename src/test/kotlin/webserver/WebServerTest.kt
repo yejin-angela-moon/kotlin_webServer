@@ -83,8 +83,7 @@ class WebServerTest {
   fun `gives 404 when no matching route`() {
     assertEquals(Status.NOT_FOUND, route(Request("http://www.imperial.ac.uk/not-here")).status)
   }
-
-
+  
 //  ***** Tests for the Extensions *****
 
 // *** More flexible routing ***

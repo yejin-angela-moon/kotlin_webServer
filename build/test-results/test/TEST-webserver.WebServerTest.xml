@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="webserver.WebServerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-15T12:25:44" hostname="dyn3231-2.wlan.ic.ac.uk" time="0.023">
-  <properties/>
-  <testcase name="can route to hello handler" classname="webserver.WebServerTest" time="0.023"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
