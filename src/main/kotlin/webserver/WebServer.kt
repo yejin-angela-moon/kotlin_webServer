@@ -1,7 +1,7 @@
 package webserver
 
 // write your web framework code here:
-//http://www.google.com/search?q=kotlin&safe=active
+// http://www.google.com/search?q=kotlin&safe=active
 
 fun scheme(url: String): String = url.substringBefore("://")
 
@@ -20,8 +20,6 @@ fun queryParams(url: String): List<Pair<String, String>> =
       url.substringAfter("?").split("&").map { x -> Pair(x.substringBefore("="), x.substringAfter("=")) }
   }
 
-
 // http handlers for a particular website...
 
 fun homePageHandler(request: Request): Response = Response(Status.OK, "This is Imperial.")
-

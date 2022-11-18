@@ -60,31 +60,26 @@ fun route(request: Request): Response {
     }
   if (path == "/" || path == "/computing") {
     return homepageHandler(request)
-    //} else if (path.contains("/search")) {
-    //return searchPageHandler(request)
+    // } else if (path.contains("/search")) {
+    // return searchPageHandler(request)
   } else if (path.contains("say-hello")) {
     return helloHandler(request)
   }
   return Response(Status.NOT_FOUND, "")
 }
 
-//typealias HttpHandler = (Request) -> Response
+// typealias HttpHandler = (Request) -> Response
 
-//val routeConfig = listOf("say-hello" to ::helloHandler, "/" to ::homepageHandler, "/computing" to ::homepageHandler)
-//fun configureRoutes() { //higher-order functions and lambda notation
+// val routeConfig = listOf("say-hello" to ::helloHandler, "/" to ::homepageHandler, "/computing" to ::homepageHandler)
+// fun configureRoutes() { //higher-order functions and lambda notation
 //  val app: HttpHandler = configureRoutes(request)
 //  val request = Request(url, authToken)
 //  val response = app(request)
 //  return response
-//}
+// }
 
-
-//if (request.url.contains("?")) {
-//val say = request.url.substringAfter("say-").substringBefore("?")
-//} else {
-//val say = request.url.substringAfter("say-")
-//}
-
-
-
-
+// if (request.url.contains("?")) {
+// val say = request.url.substringAfter("say-").substringBefore("?")
+// } else {
+// val say = request.url.substringAfter("say-")
+// }
