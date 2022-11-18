@@ -68,14 +68,15 @@ fun route(request: Request): Response {
   return Response(Status.NOT_FOUND, "")
 }
 
-typealias HttpHandler = (Request) -> Response
+//typealias HttpHandler = (Request) -> Response
 
-val routeConfig = listOf("say-hello" to ::helloHandler, "/" to ::homepageHandler, "/computing" to ::homepageHandler)
-fun configureRoutes() { //higher-order functions and lambda notation
-  val app: HttpHandler = configureRoutes(request)
-  val request = Request(url, authToken)
-  val response = app(request)
-}
+//val routeConfig = listOf("say-hello" to ::helloHandler, "/" to ::homepageHandler, "/computing" to ::homepageHandler)
+//fun configureRoutes() { //higher-order functions and lambda notation
+//  val app: HttpHandler = configureRoutes(request)
+//  val request = Request(url, authToken)
+//  val response = app(request)
+//  return response
+//}
 
 
 //if (request.url.contains("?")) {
